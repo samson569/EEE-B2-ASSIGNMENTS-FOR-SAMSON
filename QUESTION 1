@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+using namespace std;
+// base class
+class Computer {
+  protected:
+    string name;
+    int memory;
+  public:
+    void setName(string n) {
+      name = n;
+    }
+    void setMemory(int m) {
+      memory = m;
+    }
+    void printSpecs() {
+      cout << "Name: " << name << endl;
+      cout << "Memory: " << memory << " GB" << endl;
+    }
+};
+// derived class 1
+class Server : public Computer {
+  private:
+    int speed;
+  public:
+    void setSpeed(char c) {
+      speed = c;
+    }
+    void printSpecs() {
+      Computer::printSpecs();
+      cout << "Speed: " << speed << endl;
+    }
+};
+
+// derived class 2
+class Client : public Computer {
+  private:
+    int screenSize;
+  public:
+    void setScreenSize(int s) {
+      screenSize = s;
+    }
+    void printSpecs() {
+      Computer::printSpecs();
+      cout << "Screen Size: " << screenSize << " inches" << endl;
+    }
+};
+
+int main() {
+  Server myServer;
+  myServer.setName("Server computer");
+  myServer.setMemory(250);
+  myServer.setSpeed(543);
+  cout << "Server Specs:" << endl;
+  myServer.printSpecs();
+  Client myClient;
+  myClient.setName("Client Computer");
+  myClient.setMemory(500);
+  myClient.setScreenSize(20);
+  cout << "Client Specs:" << endl;
+  myClient.printSpecs();
+
+  return 0;
+}
