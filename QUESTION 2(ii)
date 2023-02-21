@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std; 
+class Person {
+public:
+    std::string name;
+    int age;
+};
+
+class Student : public Person {
+public:
+    std::string institution;
+    int year;
+    std::string reg_number;
+};
+
+
+
+
+
+
