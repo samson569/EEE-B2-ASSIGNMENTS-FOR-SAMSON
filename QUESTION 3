@@ -1,0 +1,55 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// base class
+class Student {
+public:
+    int studentID;
+    string name;
+    string email;
+    string institution;
+
+    void displayDetails() {
+        cout << "Student ID: " << studentID << endl;
+        cout << "Name: " << name << endl;
+        cout << "Email: " << email << endl;
+        cout << "Institution: " << institution<< endl;
+    }
+};
+
+// derived class for ICT students
+class ICTStudent : public Student {
+public:
+    string courseType;
+    int level; 
+    string units; 
+    void displayDetails() {
+        Student::displayDetails(); 
+        cout << "Course Type: " << courseType << endl;
+        cout << "Level: " << level << endl;
+        cout << "Units: " << units << endl;
+    }
+
+    void calculateGrades() {
+ }
+};
+
+// main function
+int main() {
+    // create an ICT student object
+    ICTStudent s;
+    s.studentID =2110042;
+    s.name = "Samson";
+    s.email = "samson@gmail.com";
+    s.courseType = "BSC-IT";
+    s.level = 1;
+    s.units = "Programming, Web design, Com skills";
+
+    // display the student details and calculate their grades
+    s.displayDetails();
+    s.calculateGrades();
+
+    return 0;
+}
