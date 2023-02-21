@@ -1,0 +1,31 @@
+#include <iostream>
+class Person {
+    private:
+        int age;
+        char firstname;
+        char lastname;
+        public:
+        Person(int age, char firstname, char lastname) {
+            this->age = age;
+            this->firstname = firstname;
+            this->lastname = lastname;
+        }
+          int getAge() {
+            return age;
+        }
+        void setAge(int age) {
+            this->age = age;
+        }
+           char getFirstname() {
+            return firstname;
+        }
+void setFirstname(char firstname) {
+            this->firstname = firstname;
+        }
+       char getLastname() {
+            return lastname;
+        }
+         void setLastname(char lastname) {
+            this->lastname = lastname;
+        }
+};
